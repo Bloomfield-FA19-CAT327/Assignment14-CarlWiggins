@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Analytics;
 
 public class SpawnCube : MonoBehaviour
 {
@@ -11,7 +12,8 @@ public class SpawnCube : MonoBehaviour
     // Start is called before the first frame update
    public void spawnCube()
     {
-        Instantiate(cube, spawnPos.transform.position, Quaternion.identity);
+        Analytics.CustomEvent("spawned cube");
+         Instantiate(cube, spawnPos.transform.position, Quaternion.identity);
     }
    
 }

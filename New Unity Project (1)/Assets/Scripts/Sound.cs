@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Analytics;
 
 public class Sound : MonoBehaviour
 {
@@ -9,7 +10,8 @@ public class Sound : MonoBehaviour
     // Start is called before the first frame update
     public void soundStart()
     {
-        poof.Play();
+        Analytics.CustomEvent("played song");
+       poof.Play();
     }
 
 }
